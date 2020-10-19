@@ -1,7 +1,7 @@
 <?php
 
 //define total number of results you want per page  
-$results_per_page = 4;  
+$results_per_page = 10;  
   
 //find the total number of results stored in the database  
 $products = "SELECT * FROM products";  
