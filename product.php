@@ -1,5 +1,6 @@
 <?php include('C:\xampp\htdocs\training\template_intro\admin\configdb.php'); ?>
 <?php include('C:\xampp\htdocs\training\template_intro\admin\listproducts.php'); ?>
+<?php include('C:\xampp\htdocs\training\template_intro\pagination.php'); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -460,7 +461,7 @@
             </div>
             <div class="aa-product-catg-pagination">
               <nav>
-                <ul class="pagination">
+                <!-- <ul class="pagination">
                   <li>
                     <a href="#" aria-label="Previous">
                       <span aria-hidden="true">&laquo;</span>
@@ -476,7 +477,10 @@
                       <span aria-hidden="true">&raquo;</span>
                     </a>
                   </li>
-                </ul>
+                </ul> -->
+
+                <?php echo $pages_list; ?>
+
               </nav>
             </div>
           </div>
