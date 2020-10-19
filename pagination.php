@@ -32,8 +32,8 @@ if ($result->num_rows > 0) {
             
         $products_listed.='<li>
         <figure>
-            <a class="aa-product-img" href="#"><img src="admin/product_images/'.$row["image"].'" alt="'.$row["name"].'"></a>
-            <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+            <a class="aa-product-img" href="product-detail.php?product_detail='.$row["product_id"].'"><img src="admin/product_images/'.$row["image"].'" alt="'.$row["name"].'"></a>
+            <a class="aa-add-card-btn add-to-cart" href="#" data-pids='.$row["product_id"].'><span class="fa fa-shopping-cart"></span>Add To Cart</a>
             <figcaption>
             <h4 class="aa-product-title"><a href="#">'.$row["name"].'</a></h4>
             <span class="aa-product-price">$'.$row["price"].'</span>
@@ -48,6 +48,7 @@ if ($result->num_rows > 0) {
         </li>';
     }
 }
+$products_listed.='</ul>';
 
 if (isset($_GET['page']) ) {  
     if ($_GET['page']>1) {
@@ -65,7 +66,6 @@ if (isset($_GET['page']) ) {
     $next=null;
 }
 
-$products_listed.='</ul>';
 //display the link of the pages in URL
 $pages_list='';
 $pages_list.='<ul class="pagination"><li><a href="product.php?page='.$prev.'" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>';
