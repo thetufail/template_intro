@@ -49,15 +49,20 @@ if ($result->num_rows > 0) {
     }
 }
 
-if ($_GET['page']>1) {
-    $prev = $_GET['page']-1;
+if (isset($_GET['page']) ) {  
+    if ($_GET['page']>1) {
+        $prev = $_GET['page']-1;
+    } else {
+        $prev = $_GET['page'];
+    }
+    if ($_GET['page']<$number_of_page) {
+        $next = $_GET['page']+1;
+    } else {
+        $next = $_GET['page'];
+    }
 } else {
-    $prev = $_GET['page'];
-}
-if ($_GET['page']<$number_of_page) {
-    $next = $_GET['page']+1;
-} else {
-    $next = $_GET['page'];
+    $prev=null;
+    $next=null;
 }
 
 $products_listed.='</ul>';
