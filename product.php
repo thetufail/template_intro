@@ -1,5 +1,8 @@
-<?php include('C:\xampp\htdocs\training\template_intro\admin\configdb.php'); ?>
-<?php include('C:\xampp\htdocs\training\template_intro\admin\listproducts.php'); ?>
+<?php
+
+session_start();
+include('C:\xampp\htdocs\training\template_intro\admin\configdb.php'); 
+?>
 <?php include('C:\xampp\htdocs\training\template_intro\pagination.php'); ?>
 
 <!DOCTYPE html>
@@ -144,8 +147,8 @@
                   <span class="aa-cart-title">SHOPPING CART</span>
                   <span class="aa-cart-notify">2</span>
                 </a>
-                <div class="aa-cartbox-summary">
-                  <ul>
+                <div id="cart" class="aa-cartbox-summary">
+                  <!-- <ul>
                     <li>
                       <a class="aa-cartbox-img" href="#"><img src="img/woman-small-2.jpg" alt="img"></a>
                       <div class="aa-cartbox-info">
@@ -171,7 +174,7 @@
                       </span>
                     </li>
                   </ul>
-                  <a class="aa-cartbox-checkout aa-primary-btn" href="#">Checkout</a>
+                  <a class="aa-cartbox-checkout aa-primary-btn" href="#">Checkout</a> -->
                 </div>
               </div>
               <!-- / cart box -->
@@ -768,7 +771,110 @@
   <!-- Price picker slider -->
   <script type="text/javascript" src="js/nouislider.js"></script>
   <!-- Custom js -->
-  <script src="js/custom.js"></script> 
+  <script src="js/custom.js"></script>
+
+  <script>
+  var productInCart = [];
+  var totalPriceOfAllProduct = 0;
+
+    $(document).ready(function() {
+      $('.add-to-cart').click(function(){
+        var product_id = $(this).data('productid');
+        // console.log('clicked ' + pid);
+        $.ajax({
+          method: "POST",
+          url: "functions.php",
+          data: { id: product_id },
+          dataType: "JSON"
+        }).done(function( msg ) {
+            console.log(msg);
+                // console.log(product);
+                var c = 0;
+                if (c == productInCart.length) {
+                    var productInfo = { id: Number(msg.product.id), image: msg.product.image, item: msg.product.name, quantity: 1, price: Number(msg.product.price), totalPrice: 0 };
+                    productInfo.totalPrice = productInfo.quantity * msg.product.price;
+                    totalPriceOfAllProduct = totalPriceOfAllProduct + productInfo.price;
+                    productInCart.push(productInfo);
+                } else {
+                    for (var i = 0; i < productInCart.length; i++) {
+                        if (msg.product.id != productInCart[i].id) {
+                            c++;
+                        } else {
+                            // console.log(typeof productInCart[i].quantity);
+                            productInCart[i].quantity += 1;
+                            productInCart[i].totalPrice = productInCart[i].quantity * msg.product.price;
+                            totalPriceOfAllProduct = totalPriceOfAllProduct + productInCart[i].price;
+                            break;
+                        }
+                    }
+                    if (c == productInCart.length) {
+                        var productInfo = { id: Number(msg.product.id), image: msg.product.image, item: msg.product.name, quantity: 1, price: Number(msg.product.price), totalPrice: 0 };
+                        productInfo.totalPrice = productInfo.quantity * msg.product.price;
+                        totalPriceOfAllProduct = totalPriceOfAllProduct + productInfo.price;
+                        productInCart.push(productInfo);
+                    }
+                 }
+                display();
+                            console.log(productInCart);
+
+                            function display() {
+                                var html = '';
+                                html +='<ul>';
+                    
+                                // <thead>\
+                                //       <tr>\
+                                //         <th></th>\
+                                //         <th></th>\
+                                //         <th>Product</th>\
+                                //         <th>Price</th>\
+                                //         <th>Quantity</th>\
+                                //         <th>Total</th>\
+                                //       </tr>\
+                                // </thead>\
+                                // <tbody>';
+                                for (var i = 0; i < productInCart.length; i++) {
+                                    html += '<li>\
+                      <a class="aa-cartbox-img" href="#"><img src="admin/product_images/'+productInCart[i].image+'" alt="img"></a>\
+                      <div class="aa-cartbox-info">\
+                        <h4><a href="#">'+productInCart[i].item+'</a></h4>\
+                        <p>'+productInCart[i].quantity+' x $'+productInCart[i].price+'</p>\
+                      </div>\
+                      <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>\
+                    </li>';
+                                    // <tr>\
+                                    //   <td><a class="remove" href="#"><fa class="fa fa-close"></fa></a></td>\
+                                    //   <td><a href="#"><img src="localhost/training/template_intro/admin/product_images/'+productInCart[i].image+'" alt="img"></a></td>\
+                                    //   <td><a class="aa-cart-title" href="#">'+productInCart[i].item+'</a></td>\
+                                    //   <td>$'+productInCart[i].price+'</td>\
+                                    //   <td><input class="aa-cart-quantity" type="number" value="'+productInCart[i].quantity+'"></td>\
+                                    //   <td>$'+productInCart[i].totalPrice+'</td>\
+                                    // </tr>';
+                                }
+                                      html +='<li>\
+                      <span class="aa-cartbox-total-title">\
+                        Total\
+                      </span>\
+                      <span class="aa-cartbox-total-price">\
+                        $'+totalPriceOfAllProduct+'\
+                      </span>\
+                    </li>\
+                  </ul>\
+                  <a class="aa-cartbox-checkout aa-primary-btn" href="#">Checkout</a>';
+                                      // <tr><td colspan="6" class="aa-cart-view-bottom">\
+                                      // <div class="aa-cart-coupon">\
+                                      //   <input class="aa-coupon-code" type="text" placeholder="Coupon">\
+                                      //   <input class="aa-cart-view-btn" type="submit" value="Apply Coupon">\
+                                      // </div>\
+                                      // <input class="aa-cart-view-btn" type="submit" value="Update Cart">\
+                                      // </td>\
+                                      // </tr>\
+                                      // </tbody>';
+                                     $("#cart").html(html);
+                            }
+        });
+      });
+    });
+  </script>
   
 
   </body>
