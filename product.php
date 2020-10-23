@@ -1,8 +1,4 @@
-<?php
-
-session_start();
-include('C:\xampp\htdocs\training\template_intro\admin\configdb.php'); 
-?>
+<?php include('C:\xampp\htdocs\training\template_intro\admin\configdb.php'); ?>
 <?php include('C:\xampp\htdocs\training\template_intro\pagination.php'); ?>
 
 <!DOCTYPE html>
@@ -10,17 +6,17 @@ include('C:\xampp\htdocs\training\template_intro\admin\configdb.php');
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Daily Shop | Product</title>
-    
+
     <!-- Font awesome -->
     <link href="css/font-awesome.css" rel="stylesheet">
     <!-- Bootstrap -->
-    <link href="css/bootstrap.css" rel="stylesheet">   
+    <link href="css/bootstrap.css" rel="stylesheet">
     <!-- SmartMenus jQuery Bootstrap Addon CSS -->
     <link href="css/jquery.smartmenus.bootstrap.css" rel="stylesheet">
     <!-- Product view slider -->
-    <link rel="stylesheet" type="text/css" href="css/jquery.simpleLens.css">    
+    <link rel="stylesheet" type="text/css" href="css/jquery.simpleLens.css">
     <!-- slick slider -->
     <link rel="stylesheet" type="text/css" href="css/slick.css">
     <!-- price picker slider -->
@@ -31,12 +27,12 @@ include('C:\xampp\htdocs\training\template_intro\admin\configdb.php');
     <link href="css/sequence-theme.modern-slide-in.css" rel="stylesheet" media="all">
 
     <!-- Main style sheet -->
-    <link href="css/style.css" rel="stylesheet">    
+    <link href="css/style.css" rel="stylesheet">
 
     <!-- Google Font -->
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-    
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -48,14 +44,14 @@ include('C:\xampp\htdocs\training\template_intro\admin\configdb.php');
   </head>
   <!-- !Important notice -->
   <!-- Only for product page body tag have to added .productPage class -->
-  <body class="productPage">  
+  <body class="productPage">
    <!-- wpf loader Two -->
-    <div id="wpf-loader-two">          
+    <div id="wpf-loader-two">
       <div class="wpf-loader-two-inner">
         <span>Loading</span>
       </div>
-    </div> 
-    <!-- / wpf loader Two -->       
+    </div>
+    <!-- / wpf loader Two -->
  <!-- SCROLL TOP BUTTON -->
     <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
   <!-- END SCROLL TOP BUTTON -->
@@ -142,10 +138,10 @@ include('C:\xampp\htdocs\training\template_intro\admin\configdb.php');
               <!-- / logo  -->
                <!-- cart box -->
               <div class="aa-cartbox">
-                <a class="aa-cart-link" href="#">
+                <a class="aa-cart-link" href="cart.php">
                   <span class="fa fa-shopping-basket"></span>
                   <span class="aa-cart-title">SHOPPING CART</span>
-                  <span class="aa-cart-notify">2</span>
+                  <span id="count" class="aa-cart-notify">0</span>
                 </a>
                 <div id="cart" class="aa-cartbox-summary">
                   <!-- <ul>
@@ -164,7 +160,7 @@ include('C:\xampp\htdocs\training\template_intro\admin\configdb.php');
                         <p>1 x $250</p>
                       </div>
                       <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                    </li>                    
+                    </li>
                     <li>
                       <span class="aa-cartbox-total-title">
                         Total
@@ -185,7 +181,7 @@ include('C:\xampp\htdocs\training\template_intro\admin\configdb.php');
                   <button type="submit"><span class="fa fa-search"></span></button>
                 </form>
               </div>
-              <!-- / search box -->             
+              <!-- / search box -->
             </div>
           </div>
         </div>
@@ -206,18 +202,18 @@ include('C:\xampp\htdocs\training\template_intro\admin\configdb.php');
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
-            </button>          
+            </button>
           </div>
           <div class="navbar-collapse collapse">
             <!-- Left nav -->
             <ul class="nav navbar-nav">
               <li><a href="index.html">Home</a></li>
               <li><a href="#">Men <span class="caret"></span></a>
-                <ul class="dropdown-menu">                
+                <ul class="dropdown-menu">
                   <li><a href="#">Casual</a></li>
                   <li><a href="#">Sports</a></li>
                   <li><a href="#">Formal</a></li>
-                  <li><a href="#">Standard</a></li>                                                
+                  <li><a href="#">Standard</a></li>
                   <li><a href="#">T-Shirts</a></li>
                   <li><a href="#">Shirts</a></li>
                   <li><a href="#">Jeans</a></li>
@@ -226,18 +222,18 @@ include('C:\xampp\htdocs\training\template_intro\admin\configdb.php');
                     <ul class="dropdown-menu">
                       <li><a href="#">Sleep Wear</a></li>
                       <li><a href="#">Sandals</a></li>
-                      <li><a href="#">Loafers</a></li>                                      
+                      <li><a href="#">Loafers</a></li>
                     </ul>
                   </li>
                 </ul>
               </li>
               <li><a href="#">Women <span class="caret"></span></a>
-                <ul class="dropdown-menu">  
-                  <li><a href="#">Kurta & Kurti</a></li>                                                                
-                  <li><a href="#">Trousers</a></li>              
+                <ul class="dropdown-menu">
+                  <li><a href="#">Kurta & Kurti</a></li>
+                  <li><a href="#">Trousers</a></li>
                   <li><a href="#">Casual</a></li>
                   <li><a href="#">Sports</a></li>
-                  <li><a href="#">Formal</a></li>                
+                  <li><a href="#">Formal</a></li>
                   <li><a href="#">Sarees</a></li>
                   <li><a href="#">Shoes</a></li>
                   <li><a href="#">And more.. <span class="caret"></span></a>
@@ -251,7 +247,7 @@ include('C:\xampp\htdocs\training\template_intro\admin\configdb.php');
                           <li><a href="#">Earrings</a></li>
                           <li><a href="#">Jewellery Sets</a></li>
                           <li><a href="#">Lockets</a></li>
-                          <li class="disabled"><a class="disabled" href="#">Disabled item</a></li>                       
+                          <li class="disabled"><a class="disabled" href="#">Disabled item</a></li>
                           <li><a href="#">Jeans</a></li>
                           <li><a href="#">Polo T-Shirts</a></li>
                           <li><a href="#">SKirts</a></li>
@@ -264,21 +260,21 @@ include('C:\xampp\htdocs\training\template_intro\admin\configdb.php');
                           <li><a href="#">Hand Bags</a></li>
                           <li><a href="#">Single Bags</a></li>
                           <li><a href="#">Travel Bags</a></li>
-                          <li><a href="#">Wallets & Belts</a></li>                        
+                          <li><a href="#">Wallets & Belts</a></li>
                           <li><a href="#">Sunglases</a></li>
-                          <li><a href="#">Nail</a></li>                       
+                          <li><a href="#">Nail</a></li>
                         </ul>
-                      </li>                   
+                      </li>
                     </ul>
                   </li>
                 </ul>
               </li>
               <li><a href="#">Kids <span class="caret"></span></a>
-                <ul class="dropdown-menu">                
+                <ul class="dropdown-menu">
                   <li><a href="#">Casual</a></li>
                   <li><a href="#">Sports</a></li>
                   <li><a href="#">Formal</a></li>
-                  <li><a href="#">Standard</a></li>                                                
+                  <li><a href="#">Standard</a></li>
                   <li><a href="#">T-Shirts</a></li>
                   <li><a href="#">Shirts</a></li>
                   <li><a href="#">Jeans</a></li>
@@ -287,46 +283,46 @@ include('C:\xampp\htdocs\training\template_intro\admin\configdb.php');
                     <ul class="dropdown-menu">
                       <li><a href="#">Sleep Wear</a></li>
                       <li><a href="#">Sandals</a></li>
-                      <li><a href="#">Loafers</a></li>                                      
+                      <li><a href="#">Loafers</a></li>
                     </ul>
                   </li>
                 </ul>
               </li>
               <li><a href="#">Sports</a></li>
              <li><a href="#">Digital <span class="caret"></span></a>
-                <ul class="dropdown-menu">                
+                <ul class="dropdown-menu">
                   <li><a href="#">Camera</a></li>
                   <li><a href="#">Mobile</a></li>
                   <li><a href="#">Tablet</a></li>
-                  <li><a href="#">Laptop</a></li>                                                
-                  <li><a href="#">Accesories</a></li>                
+                  <li><a href="#">Laptop</a></li>
+                  <li><a href="#">Accesories</a></li>
                 </ul>
               </li>
-              <li><a href="#">Furniture</a></li>            
+              <li><a href="#">Furniture</a></li>
              <li><a href="blog-archive.html">Blog <span class="caret"></span></a>
-                <ul class="dropdown-menu">                
+                <ul class="dropdown-menu">
                   <li><a href="blog-archive.html">Blog Style 1</a></li>
                   <li><a href="blog-archive-2.html">Blog Style 2</a></li>
-                  <li><a href="blog-single.html">Blog Single</a></li>                
+                  <li><a href="blog-single.html">Blog Single</a></li>
                 </ul>
               </li>
               <li><a href="contact.html">Contact</a></li>
               <li><a href="#">Pages <span class="caret"></span></a>
-                <ul class="dropdown-menu">                
+                <ul class="dropdown-menu">
                   <li><a href="product.html">Shop Page</a></li>
-                  <li><a href="product-detail.html">Shop Single</a></li>                
-                  <li><a href="404.html">404 Page</a></li>                
+                  <li><a href="product-detail.html">Shop Single</a></li>
+                  <li><a href="404.html">404 Page</a></li>
                 </ul>
               </li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
-      </div> 
+      </div>
       </div>
     </div>
   </section>
-  <!-- / menu -->  
- 
+  <!-- / menu -->
+
   <!-- catg header banner section -->
   <section id="aa-catg-head-banner">
    <img src="img/fashion/fashion-header-bg-8.jpg" alt="fashion img">
@@ -335,7 +331,7 @@ include('C:\xampp\htdocs\training\template_intro\admin\configdb.php');
       <div class="aa-catg-head-banner-content">
         <h2>Fashion</h2>
         <ol class="breadcrumb">
-          <li><a href="index.html">Home</a></li>         
+          <li><a href="index.html">Home</a></li>
           <li class="active">Women</li>
         </ol>
       </div>
@@ -379,88 +375,21 @@ include('C:\xampp\htdocs\training\template_intro\admin\configdb.php');
 
                 <?php echo $products_listed; ?>
 
-              <!-- quick view modal -->                  
+              <!-- quick view modal -->
               <div class="modal fade" id="quick-view-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
-                  <div class="modal-content">                      
+                  <div class="modal-content">
                     <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                       <div class="row">
-                        <!-- Modal view slider -->
-                        <div class="col-md-6 col-sm-6 col-xs-12">                              
-                          <div class="aa-product-view-slider">                                
-                            <div class="simpleLens-gallery-container" id="demo-1">
-                              <div class="simpleLens-container">
-                                  <div class="simpleLens-big-image-container">
-                                      <a class="simpleLens-lens-image" data-lens-image="img/view-slider/large/polo-shirt-1.png">
-                                          <img src="img/view-slider/medium/polo-shirt-1.png" class="simpleLens-big-image">
-                                      </a>
-                                  </div>
-                              </div>
-                              <div class="simpleLens-thumbnails-container">
-                                  <a href="#" class="simpleLens-thumbnail-wrapper"
-                                     data-lens-image="img/view-slider/large/polo-shirt-1.png"
-                                     data-big-image="img/view-slider/medium/polo-shirt-1.png">
-                                      <img src="img/view-slider/thumbnail/polo-shirt-1.png">
-                                  </a>                                    
-                                  <a href="#" class="simpleLens-thumbnail-wrapper"
-                                     data-lens-image="img/view-slider/large/polo-shirt-3.png"
-                                     data-big-image="img/view-slider/medium/polo-shirt-3.png">
-                                      <img src="img/view-slider/thumbnail/polo-shirt-3.png">
-                                  </a>
-
-                                  <a href="#" class="simpleLens-thumbnail-wrapper"
-                                     data-lens-image="img/view-slider/large/polo-shirt-4.png"
-                                     data-big-image="img/view-slider/medium/polo-shirt-4.png">
-                                      <img src="img/view-slider/thumbnail/polo-shirt-4.png">
-                                  </a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- Modal view content -->
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <div class="aa-product-view-content">
-                            <h3>T-Shirt</h3>
-                            <div class="aa-price-block">
-                              <span class="aa-product-view-price">$34.99</span>
-                              <p class="aa-product-avilability">Avilability: <span>In stock</span></p>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis animi, veritatis quae repudiandae quod nulla porro quidem, itaque quis quaerat!</p>
-                            <h4>Size</h4>
-                            <div class="aa-prod-view-size">
-                              <a href="#">S</a>
-                              <a href="#">M</a>
-                              <a href="#">L</a>
-                              <a href="#">XL</a>
-                            </div>
-                            <div class="aa-prod-quantity">
-                              <form action="">
-                                <select name="" id="">
-                                  <option value="0" selected="1">1</option>
-                                  <option value="1">2</option>
-                                  <option value="2">3</option>
-                                  <option value="3">4</option>
-                                  <option value="4">5</option>
-                                  <option value="5">6</option>
-                                </select>
-                              </form>
-                              <p class="aa-prod-category">
-                                Category: <a href="#">Polo T-Shirt</a>
-                              </p>
-                            </div>
-                            <div class="aa-prod-view-bottom">
-                              <a href="#" class="aa-add-to-cart-btn"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
-                              <a href="#" class="aa-add-to-cart-btn">View Details</a>
-                            </div>
-                          </div>
-                        </div>
+                      <div id="quickview">
                       </div>
-                    </div>                        
+                      </div>
+                    </div>
                   </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
               </div>
-              <!-- / quick view modal -->   
+              <!-- / quick view modal -->
             </div>
             <div class="aa-product-catg-pagination">
               <nav>
@@ -515,7 +444,7 @@ include('C:\xampp\htdocs\training\template_intro\admin\configdb.php');
             </div>
             <!-- single sidebar -->
             <div class="aa-sidebar-widget">
-              <h3>Shop By Price</h3>              
+              <h3>Shop By Price</h3>
               <!-- price range -->
               <div class="aa-sidebar-price-range">
                <form action="">
@@ -525,7 +454,7 @@ include('C:\xampp\htdocs\training\template_intro\admin\configdb.php');
                  <span id="skip-value-upper" class="example-val">100.00</span>
                  <button class="aa-filter-btn" type="submit">Filter</button>
                </form>
-              </div>              
+              </div>
 
             </div>
             <!-- single sidebar -->
@@ -544,7 +473,7 @@ include('C:\xampp\htdocs\training\template_intro\admin\configdb.php');
                 <a class="aa-color-cyan" href="#"></a>
                 <a class="aa-color-olive" href="#"></a>
                 <a class="aa-color-orchid" href="#"></a>
-              </div>                            
+              </div>
             </div>
             <!-- single sidebar -->
             <div class="aa-sidebar-widget">
@@ -556,24 +485,24 @@ include('C:\xampp\htdocs\training\template_intro\admin\configdb.php');
                     <div class="aa-cartbox-info">
                       <h4><a href="#">Product Name</a></h4>
                       <p>1 x $250</p>
-                    </div>                    
+                    </div>
                   </li>
                   <li>
                     <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-1.jpg"></a>
                     <div class="aa-cartbox-info">
                       <h4><a href="#">Product Name</a></h4>
                       <p>1 x $250</p>
-                    </div>                    
+                    </div>
                   </li>
                    <li>
                     <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-2.jpg"></a>
                     <div class="aa-cartbox-info">
                       <h4><a href="#">Product Name</a></h4>
                       <p>1 x $250</p>
-                    </div>                    
-                  </li>                                      
+                    </div>
+                  </li>
                 </ul>
-              </div>                            
+              </div>
             </div>
             <!-- single sidebar -->
             <div class="aa-sidebar-widget">
@@ -585,28 +514,28 @@ include('C:\xampp\htdocs\training\template_intro\admin\configdb.php');
                     <div class="aa-cartbox-info">
                       <h4><a href="#">Product Name</a></h4>
                       <p>1 x $250</p>
-                    </div>                    
+                    </div>
                   </li>
                   <li>
                     <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-1.jpg"></a>
                     <div class="aa-cartbox-info">
                       <h4><a href="#">Product Name</a></h4>
                       <p>1 x $250</p>
-                    </div>                    
+                    </div>
                   </li>
                    <li>
                     <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-2.jpg"></a>
                     <div class="aa-cartbox-info">
                       <h4><a href="#">Product Name</a></h4>
                       <p>1 x $250</p>
-                    </div>                    
-                  </li>                                      
+                    </div>
+                  </li>
                 </ul>
-              </div>                            
+              </div>
             </div>
           </aside>
         </div>
-       
+
       </div>
     </div>
   </section>
@@ -632,7 +561,7 @@ include('C:\xampp\htdocs\training\template_intro\admin\configdb.php');
   </section>
   <!-- / Subscribe section -->
 
-  <!-- footer -->  
+  <!-- footer -->
   <footer id="aa-footer">
     <!-- footer bottom -->
     <div class="aa-footer-top">
@@ -725,10 +654,10 @@ include('C:\xampp\htdocs\training\template_intro\admin\configdb.php');
     </div>
   </footer>
   <!-- / footer -->
-  <!-- Login Modal -->  
+  <!-- Login Modal -->
   <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">                      
+      <div class="modal-content">
         <div class="modal-body">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           <h4>Login or Register</h4>
@@ -744,25 +673,25 @@ include('C:\xampp\htdocs\training\template_intro\admin\configdb.php');
               Don't have an account?<a href="account.html">Register now!</a>
             </div>
           </form>
-        </div>                        
+        </div>
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div>
 
 
-    
+
 
   <!-- jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="js/bootstrap.js"></script>  
+  <script src="js/bootstrap.js"></script>
   <!-- SmartMenus jQuery plugin -->
   <script type="text/javascript" src="js/jquery.smartmenus.js"></script>
   <!-- SmartMenus jQuery Bootstrap Addon -->
-  <script type="text/javascript" src="js/jquery.smartmenus.bootstrap.js"></script>  
+  <script type="text/javascript" src="js/jquery.smartmenus.bootstrap.js"></script>
   <!-- To Slider JS -->
   <script src="js/sequence.js"></script>
-  <script src="js/sequence-theme.modern-slide-in.js"></script>  
+  <script src="js/sequence-theme.modern-slide-in.js"></script>
   <!-- Product view slider -->
   <script type="text/javascript" src="js/jquery.simpleGallery.js"></script>
   <script type="text/javascript" src="js/jquery.simpleLens.js"></script>
@@ -774,108 +703,119 @@ include('C:\xampp\htdocs\training\template_intro\admin\configdb.php');
   <script src="js/custom.js"></script>
 
   <script>
-  var productInCart = [];
-  var totalPriceOfAllProduct = 0;
-
     $(document).ready(function() {
       $('.add-to-cart').click(function(){
         var product_id = $(this).data('productid');
-        // console.log('clicked ' + pid);
         $.ajax({
           method: "POST",
           url: "functions.php",
           data: { id: product_id },
           dataType: "JSON"
         }).done(function( msg ) {
-            console.log(msg);
-                // console.log(product);
-                var c = 0;
-                if (c == productInCart.length) {
-                    var productInfo = { id: Number(msg.product.id), image: msg.product.image, item: msg.product.name, quantity: 1, price: Number(msg.product.price), totalPrice: 0 };
-                    productInfo.totalPrice = productInfo.quantity * msg.product.price;
-                    totalPriceOfAllProduct = totalPriceOfAllProduct + productInfo.price;
-                    productInCart.push(productInfo);
-                } else {
-                    for (var i = 0; i < productInCart.length; i++) {
-                        if (msg.product.id != productInCart[i].id) {
-                            c++;
-                        } else {
-                            // console.log(typeof productInCart[i].quantity);
-                            productInCart[i].quantity += 1;
-                            productInCart[i].totalPrice = productInCart[i].quantity * msg.product.price;
-                            totalPriceOfAllProduct = totalPriceOfAllProduct + productInCart[i].price;
-                            break;
-                        }
-                    }
-                    if (c == productInCart.length) {
-                        var productInfo = { id: Number(msg.product.id), image: msg.product.image, item: msg.product.name, quantity: 1, price: Number(msg.product.price), totalPrice: 0 };
-                        productInfo.totalPrice = productInfo.quantity * msg.product.price;
-                        totalPriceOfAllProduct = totalPriceOfAllProduct + productInfo.price;
-                        productInCart.push(productInfo);
-                    }
-                 }
-                display();
-                            console.log(productInCart);
+          console.log('Yes '+msg);
 
-                            function display() {
-                                var html = '';
-                                html +='<ul>';
-                    
-                                // <thead>\
-                                //       <tr>\
-                                //         <th></th>\
-                                //         <th></th>\
-                                //         <th>Product</th>\
-                                //         <th>Price</th>\
-                                //         <th>Quantity</th>\
-                                //         <th>Total</th>\
-                                //       </tr>\
-                                // </thead>\
-                                // <tbody>';
-                                for (var i = 0; i < productInCart.length; i++) {
-                                    html += '<li>\
-                      <a class="aa-cartbox-img" href="#"><img src="admin/product_images/'+productInCart[i].image+'" alt="img"></a>\
-                      <div class="aa-cartbox-info">\
-                        <h4><a href="#">'+productInCart[i].item+'</a></h4>\
-                        <p>'+productInCart[i].quantity+' x $'+productInCart[i].price+'</p>\
-                      </div>\
-                      <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>\
-                    </li>';
-                                    // <tr>\
-                                    //   <td><a class="remove" href="#"><fa class="fa fa-close"></fa></a></td>\
-                                    //   <td><a href="#"><img src="localhost/training/template_intro/admin/product_images/'+productInCart[i].image+'" alt="img"></a></td>\
-                                    //   <td><a class="aa-cart-title" href="#">'+productInCart[i].item+'</a></td>\
-                                    //   <td>$'+productInCart[i].price+'</td>\
-                                    //   <td><input class="aa-cart-quantity" type="number" value="'+productInCart[i].quantity+'"></td>\
-                                    //   <td>$'+productInCart[i].totalPrice+'</td>\
-                                    // </tr>';
-                                }
-                                      html +='<li>\
-                      <span class="aa-cartbox-total-title">\
-                        Total\
-                      </span>\
-                      <span class="aa-cartbox-total-price">\
-                        $'+totalPriceOfAllProduct+'\
-                      </span>\
-                    </li>\
-                  </ul>\
-                  <a class="aa-cartbox-checkout aa-primary-btn" href="#">Checkout</a>';
-                                      // <tr><td colspan="6" class="aa-cart-view-bottom">\
-                                      // <div class="aa-cart-coupon">\
-                                      //   <input class="aa-coupon-code" type="text" placeholder="Coupon">\
-                                      //   <input class="aa-cart-view-btn" type="submit" value="Apply Coupon">\
-                                      // </div>\
-                                      // <input class="aa-cart-view-btn" type="submit" value="Update Cart">\
-                                      // </td>\
-                                      // </tr>\
-                                      // </tbody>';
-                                     $("#cart").html(html);
-                            }
-        });
+            var totalPriceOfAllProduct = 0;
+            var html = '';
+            html +='<ul>';
+            for (var i = 0; i < msg.product.length; i++) {
+              html += '<li>\
+                <a class="aa-cartbox-img" href="#"><img src="admin/product_images/'+msg.product[i]["image"]+'" alt="img"></a>\
+                <div class="aa-cartbox-info">\
+                <h4><a href="#">'+msg.product[i]["name"]+'</a></h4>\
+                <p>'+msg.product[i]["quantity"]+' x $'+msg.product[i]["price"]+'</p>\
+                </div>\
+                <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>\
+              </li>';
+              totalPriceOfAllProduct += msg.product[i]["totalPrice"];
+            }
+            html +='<li>\
+              <span class="aa-cartbox-total-title">Total</span>\
+              <span class="aa-cartbox-total-price">$'+totalPriceOfAllProduct+'</span>\
+              </li></ul>\
+              <a class="aa-cartbox-checkout aa-primary-btn" href="cart.php?proceed_checkout=checkout">Checkout</a>';
+            $("#cart").html(html);
+            var c = (msg.product.length);
+            $("#count").text(c);
+          });
       });
     });
   </script>
-  
+
+<script>
+    $(document).ready(function() {
+      $('.quick-view').click(function(){
+        var view_id = $(this).data('viewid');
+        $.ajax({
+          method: "POST",
+          url: "quickview.php",
+          data: { vid: view_id },
+          dataType: "JSON"
+        }).done(function( msg ) {
+          console.log(msg);
+          var html = '';
+
+
+
+              html += '<div class="col-md-5 col-sm-5 col-xs-12">\
+                  <div class="aa-product-view-slider">\
+                    <div id="demo-1" class="simpleLens-gallery-container">\
+                      <div class="simpleLens-container">\
+                        <div class="simpleLens-big-image-container"><a data-lens-image="'+msg.quickview["product_image"]+'" class="simpleLens-lens-image"><img src="'+msg.quickview["product_image"]+'" class="simpleLens-big-image"></a></div>\
+                      </div>\
+                      <div class="simpleLens-thumbnails-container">\
+                          <a data-big-image="img/view-slider/medium/polo-shirt-1.png" data-lens-image="img/view-slider/large/polo-shirt-1.png" class="simpleLens-thumbnail-wrapper" href="#">\
+                            <img src="img/view-slider/thumbnail/polo-shirt-1.png">\
+                          </a>\
+                          <a data-big-image="img/view-slider/medium/polo-shirt-3.png" data-lens-image="img/view-slider/large/polo-shirt-3.png" class="simpleLens-thumbnail-wrapper" href="#">\
+                            <img src="img/view-slider/thumbnail/polo-shirt-3.png">\
+                          </a>\
+                          <a data-big-image="img/view-slider/medium/polo-shirt-4.png" data-lens-image="img/view-slider/large/polo-shirt-4.png" class="simpleLens-thumbnail-wrapper" href="#">\
+                            <img src="img/view-slider/thumbnail/polo-shirt-4.png">\
+                          </a>\
+                      </div>\
+                    </div>\
+                  </div>\
+                </div>\
+                <div class="col-md-7 col-sm-7 col-xs-12">\
+                  <div class="aa-product-view-content">\
+                  <h3>'+msg.quickview["product_name"]+'</h3>\
+                                <div class="aa-price-block">\
+                                  <span class="aa-product-view-price">$'+msg.quickview["product_price"]+'</span>\
+                                  <p class="aa-product-avilability">Avilability: <span>In stock</span></p>\
+                                </div>\
+                                <p>'+msg.quickview["product_short_desc"]+'</p>\
+                                <h4>Size</h4>\
+                                <div class="aa-prod-view-size">\
+                                  <a href="#">S</a>\
+                                  <a href="#">M</a>\
+                                  <a href="#">L</a>\
+                                  <a href="#">XL</a>\
+                                </div>\
+                                <div class="aa-prod-quantity">\
+                                  <form action="">\
+                                    <select name="" id="">\
+                                      <option value="0" selected="1">'+msg.quickview["product_quantity"]+'</option>\
+                                    </select>\
+                                  </form>\
+                                  <p class="aa-prod-category">\
+                                    Category: <a href="#">'+msg.quickview["product_category"]+'</a>\
+                                  </p>\
+                                </div>\
+                                <div class="aa-prod-view-bottom">\
+                                  <a href="#" class="aa-add-to-cart-btn add-to-cart" data-productid='+view_id+'><span class="fa fa-shopping-cart"></span>Add To\ Cart</a>\
+                                  <a href="product-detail.php?product_detail='+view_id+'" class="aa-add-to-cart-btn">View Details</a></div>\
+                  </div>\
+                </div>';
+                $("#quickview").html(html);
+
+
+
+
+        });
+      });
+    });
+
+  </script>
 
   </body>
 </html>
