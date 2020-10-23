@@ -32,20 +32,20 @@ if ($result->num_rows > 0) {
             
         $products_listed.='<li>
         <figure>
-            <a class="aa-product-img" href="product-detail.php?product_detail='.$row["product_id"].'"><img src="admin/product_images/'.$row["image"].'" alt="'.$row["name"].'"></a>
-            <a class="aa-add-card-btn add-to-cart" href="#" data-pids='.$row["product_id"].'><span class="fa fa-shopping-cart"></span>Add To Cart</a>
-            <figcaption>
-            <h4 class="aa-product-title"><a href="#">'.$row["name"].'</a></h4>
-            <span class="aa-product-price">$'.$row["price"].'</span>
-            <p class="aa-product-descrip">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam accusamus facere iusto, autem soluta amet sapiente ratione inventore nesciunt a, maxime quasi consectetur, rerum illum.</p>
-            </figcaption>
-        </figure>                         
-        <div class="aa-product-hvr-content">
-            <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
-        </div>
-        <!-- product badge -->
-        <span class="aa-badge aa-sale" href="#">SALE!</span>
-        </li>';
+        <a class="aa-product-img" href="product-detail.php?product_detail='.$row["product_id"].'"><img src="admin/product_images/'.$row["image"].'" alt="'.$row["name"].'"></a>
+        <a class="aa-add-card-btn add-to-cart" href="#" data-productid='.$row["product_id"].'><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+        <figcaption>
+        <h4 class="aa-product-title"><a href="#">'.$row["name"].'</a></h4>
+        <span class="aa-product-price">$'.$row["price"].'</span>
+        <p class="aa-product-descrip">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam accusamus facere iusto, autem soluta amet sapiente ratione inventore nesciunt a, maxime quasi consectetur, rerum illum.</p>
+        </figcaption>
+    </figure>                         
+    <div class="aa-product-hvr-content">
+        <a href="#" class="quick-view" data-viewid='.$row["product_id"].' data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                            
+    </div>
+    <!-- product badge -->
+    <span class="aa-badge aa-sale" href="#">SALE!</span>
+    </li>';
     }
 }
 $products_listed.='</ul>';
